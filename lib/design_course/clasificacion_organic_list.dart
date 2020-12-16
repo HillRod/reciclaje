@@ -67,10 +67,10 @@ class _OrganicListViewState extends State<OrganicListView>
                 },
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 32.0,
-                crossAxisSpacing: 32.0,
-                childAspectRatio: 3.3 / 2, //Cambiar
+                crossAxisCount: 2,
+                mainAxisSpacing: 8.0,
+                crossAxisSpacing: 8.0,
+                childAspectRatio: .55, //Cambiar
               ),
             );
           }
@@ -127,7 +127,7 @@ class CategoryView extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     letterSpacing: 0.27,
                                     color: DesignCourseAppTheme.darkerText,
                                   ),
@@ -141,7 +141,7 @@ class CategoryView extends StatelessWidget {
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(16.0)),
                                 child: AspectRatio(
-                                    aspectRatio: 2,
+                                    aspectRatio: .67,
                                     child: Image.asset(category.imagePath)),
                               )),
                             ],

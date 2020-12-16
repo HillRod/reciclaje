@@ -66,9 +66,9 @@ class _DirectoryListState extends State<DirectoryList>
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 32.0,
-                crossAxisSpacing: 32.0,
-                childAspectRatio: 3.3 / 2, //Cambiar
+                mainAxisSpacing: 16.0,
+                crossAxisSpacing: 16.0,
+                childAspectRatio: 1, //Cambiar
               ),
             );
           }
@@ -139,7 +139,7 @@ class CategoryView extends StatelessWidget {
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(16.0)),
                                 child: AspectRatio(
-                                    aspectRatio: 2,
+                                    aspectRatio: 1.35,
                                     child: Image.asset(category.imagePath)),
                               )),
                             ],

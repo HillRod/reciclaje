@@ -1,3 +1,4 @@
+import '../main.dart';
 import 'clasificacion_organic_list.dart' as list;
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
@@ -24,6 +25,41 @@ class _OrganicGridScreenState extends State<OrganicGridScreen> {
             Flexible(
               child: getPopularCourseUI(),
             ),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Container(
+                //padding: const EdgeInsets.all(8.0),
+                height: 30,
+                decoration: BoxDecoration(
+                  color: HexColor('#AB1C0E'),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(16.0),
+                  ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: HexColor('#AB1C0E').withOpacity(0.5),
+                        offset: const Offset(1.1, 1.1),
+                        blurRadius: 10.0),
+                  ],
+                ),
+                child: Center(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '¿Cómo desecharlos?',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        letterSpacing: 0.0,
+                        color: DesignCourseAppTheme.nearlyWhite,
+                      ),
+                    ),
+                  ],
+                )),
+              ),
+            )
           ],
         ),
       ),
