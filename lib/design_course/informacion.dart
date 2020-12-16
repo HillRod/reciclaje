@@ -1,13 +1,16 @@
+import 'package:best_flutter_ui_templates/design_course/course_info_screen.dart';
 import 'package:best_flutter_ui_templates/design_course/popular_course_list_view.dart';
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+class InformationCourseHomeScreen extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _InformationCourseHomeScreenState createState() =>
+      _InformationCourseHomeScreenState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _InformationCourseHomeScreenState
+    extends State<InformationCourseHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +41,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Contenido',
+            'Información',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,

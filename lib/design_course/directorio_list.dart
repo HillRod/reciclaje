@@ -1,20 +1,18 @@
+import 'directorioLugares.dart' as directorio;
 import 'package:best_flutter_ui_templates/design_course/design_course_app_theme.dart';
 import 'package:best_flutter_ui_templates/design_course/models/category.dart';
-import 'clasificacion_1.dart' as vista2;
-import 'directorio.dart' as vista3;
-import 'informacion.dart' as vista1;
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
-class PopularCourseListView extends StatefulWidget {
-  const PopularCourseListView({Key key, this.callBack}) : super(key: key);
+class DirectoryList extends StatefulWidget {
+  const DirectoryList({Key key, this.callBack}) : super(key: key);
 
   final Function callBack;
   @override
-  _PopularCourseListViewState createState() => _PopularCourseListViewState();
+  _DirectoryListState createState() => _DirectoryListState();
 }
 
-class _PopularCourseListViewState extends State<PopularCourseListView>
+class _DirectoryListState extends State<DirectoryList>
     with TickerProviderStateMixin {
   AnimationController animationController;
   @override
@@ -44,9 +42,9 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: List<Widget>.generate(
-                Category.popularCourseList.length,
+                Category.directorioportipo.length,
                 (int index) {
-                  final int count = Category.popularCourseList.length;
+                  final int count = Category.directorioportipo.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
                     CurvedAnimation(
@@ -60,14 +58,14 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
                     callback: () {
                       widget.callBack();
                     },
-                    category: Category.popularCourseList[index],
+                    category: Category.directorioportipo[index],
                     animation: animation,
                     animationController: animationController,
                   );
                 },
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
+                crossAxisCount: 2,
                 mainAxisSpacing: 32.0,
                 crossAxisSpacing: 32.0,
                 childAspectRatio: 3.3 / 2, //Cambiar
@@ -158,30 +156,11 @@ class CategoryView extends StatelessWidget {
   }
 
   void moveTo(context) {
-    if (category.title == "Información") {
-      Navigator.push<dynamic>(
-        context,
-        MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) =>
-              vista1.InformationCourseHomeScreen(),
-        ),
-      );
-    }
-    if (category.title == "Clasificación") {
-      Navigator.push<dynamic>(
-        context,
-        MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) => vista2.ClasificationHomeScreen(),
-        ),
-      );
-    }
-    if (category.title == "Directorio") {
-      Navigator.push<dynamic>(
-        context,
-        MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) => vista3.DirectoryCourseHomeScreen(),
-        ),
-      );
-    }
+    Navigator.push<dynamic>(
+      context,
+      MaterialPageRoute<dynamic>(
+        builder: (BuildContext context) => directorio.DirectoryPlacesHome(),
+      ),
+    );
   }
 }

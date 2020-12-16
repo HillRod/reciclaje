@@ -1,3 +1,4 @@
+import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 
@@ -47,7 +48,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
         (MediaQuery.of(context).size.width / 1.2) +
         24.0;
     return Container(
-      color: DesignCourseAppTheme.nearlyWhite,
+      color: HexColor('#AB1C0E'),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -95,7 +96,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                             padding: const EdgeInsets.only(
                                 top: 32.0, left: 18, right: 16),
                             child: Text(
-                              'Web Design\nCourse',
+                              'Centro de\nAcopio',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -113,36 +114,15 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  '\$28.99',
+                                  'Miguel Ramos Arizpe 516, Zona A,\nCNOP, 98053 Zacatecas, Zac.',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w200,
-                                    fontSize: 22,
+                                    fontSize: 14,
                                     letterSpacing: 0.27,
-                                    color: DesignCourseAppTheme.nearlyBlue,
+                                    color: HexColor('#AB1C0E'),
                                   ),
                                 ),
-                                Container(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        '4.3',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w200,
-                                          fontSize: 22,
-                                          letterSpacing: 0.27,
-                                          color: DesignCourseAppTheme.grey,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: DesignCourseAppTheme.nearlyBlue,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
-                                )
                               ],
                             ),
                           ),
@@ -150,37 +130,40 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                             duration: const Duration(milliseconds: 500),
                             opacity: opacity1,
                             child: Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Row(
-                                children: <Widget>[
-                                  getTimeBoxUI('24', 'Classe'),
-                                  getTimeBoxUI('2hours', 'Time'),
-                                  getTimeBoxUI('24', 'Seat'),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: AnimatedOpacity(
-                              duration: const Duration(milliseconds: 500),
-                              opacity: opacity2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 8, bottom: 8),
-                                child: Text(
-                                  'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 14,
-                                    letterSpacing: 0.27,
-                                    color: DesignCourseAppTheme.grey,
-                                  ),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ),
+                                padding: const EdgeInsets.all(6),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        getTimeBoxUI('Teléfono', 'xxx-xxxxxxx'),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        getTimeBoxUI('Página Web', 'page.com'),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        getTimeBoxUI(
+                                            'E-Mail', 'placeholder@mail.com'),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        getTimeBoxUI('Recibe', 'Plásticos'),
+                                      ],
+                                    ),
+                                  ],
+                                )),
                           ),
                           AnimatedOpacity(
                             duration: const Duration(milliseconds: 500),
@@ -192,59 +175,49 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Container(
-                                    width: 48,
-                                    height: 48,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: DesignCourseAppTheme.nearlyWhite,
-                                        borderRadius: const BorderRadius.all(
-                                          Radius.circular(16.0),
-                                        ),
-                                        border: Border.all(
-                                            color: DesignCourseAppTheme.grey
-                                                .withOpacity(0.2)),
-                                      ),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: DesignCourseAppTheme.nearlyBlue,
-                                        size: 28,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 16,
-                                  ),
                                   Expanded(
                                     child: Container(
                                       height: 48,
                                       decoration: BoxDecoration(
-                                        color: DesignCourseAppTheme.nearlyBlue,
+                                        color: HexColor('#AB1C0E'),
                                         borderRadius: const BorderRadius.all(
                                           Radius.circular(16.0),
                                         ),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
-                                              color: DesignCourseAppTheme
-                                                  .nearlyBlue
+                                              color: HexColor('#AB1C0E')
                                                   .withOpacity(0.5),
                                               offset: const Offset(1.1, 1.1),
                                               blurRadius: 10.0),
                                         ],
                                       ),
                                       child: Center(
-                                        child: Text(
-                                          'Join Course',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18,
-                                            letterSpacing: 0.0,
+                                          child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Compartir',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 18,
+                                              letterSpacing: 0.0,
+                                              color: DesignCourseAppTheme
+                                                  .nearlyWhite,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          Icon(
+                                            Icons.share,
                                             color: DesignCourseAppTheme
                                                 .nearlyWhite,
+                                            size: 24,
                                           ),
-                                        ),
-                                      ),
+                                        ],
+                                      )),
                                     ),
                                   )
                                 ],
@@ -269,7 +242,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                 scale: CurvedAnimation(
                     parent: animationController, curve: Curves.fastOutSlowIn),
                 child: Card(
-                  color: DesignCourseAppTheme.nearlyBlue,
+                  color: HexColor('#AB1C0E'),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
                   elevation: 10.0,
@@ -278,7 +251,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                     height: 60,
                     child: Center(
                       child: Icon(
-                        Icons.favorite,
+                        Icons.directions,
                         color: DesignCourseAppTheme.nearlyWhite,
                         size: 30,
                       ),
@@ -330,7 +303,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
         ),
         child: Padding(
           padding: const EdgeInsets.only(
-              left: 18.0, right: 18.0, top: 12.0, bottom: 12.0),
+              left: 8.0, right: 8.0, top: 6.0, bottom: 6.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -342,7 +315,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: DesignCourseAppTheme.nearlyBlue,
+                  color: HexColor('#AB1C0E'),
                 ),
               ),
               Text(

@@ -1,13 +1,13 @@
-import 'package:best_flutter_ui_templates/design_course/popular_course_list_view.dart';
+import 'clasificacion_inorganic_list.dart' as list;
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+class InorganicGridScreen extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _InorganicGridScreenState createState() => _InorganicGridScreenState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _InorganicGridScreenState extends State<InorganicGridScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +38,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Contenido',
+            'Residuos inorgánicos',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -48,7 +48,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             ),
           ),
           Flexible(
-            child: PopularCourseListView(),
+            child: list.InorganicListView(),
           )
         ],
       ),

@@ -1,20 +1,19 @@
 import 'package:best_flutter_ui_templates/design_course/design_course_app_theme.dart';
 import 'package:best_flutter_ui_templates/design_course/models/category.dart';
-import 'clasificacion_1.dart' as vista2;
-import 'directorio.dart' as vista3;
-import 'informacion.dart' as vista1;
+import 'clasificacion_organic.dart' as vista1;
+import 'clasificacion_inorganic.dart' as vista2;
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
-class PopularCourseListView extends StatefulWidget {
-  const PopularCourseListView({Key key, this.callBack}) : super(key: key);
+class ClasificationListView extends StatefulWidget {
+  const ClasificationListView({Key key, this.callBack}) : super(key: key);
 
   final Function callBack;
   @override
-  _PopularCourseListViewState createState() => _PopularCourseListViewState();
+  _ClasificationListViewState createState() => _ClasificationListViewState();
 }
 
-class _PopularCourseListViewState extends State<PopularCourseListView>
+class _ClasificationListViewState extends State<ClasificationListView>
     with TickerProviderStateMixin {
   AnimationController animationController;
   @override
@@ -44,9 +43,9 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: List<Widget>.generate(
-                Category.popularCourseList.length,
+                Category.clasificacion.length,
                 (int index) {
-                  final int count = Category.popularCourseList.length;
+                  final int count = Category.clasificacion.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
                     CurvedAnimation(
@@ -60,7 +59,7 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
                     callback: () {
                       widget.callBack();
                     },
-                    category: Category.popularCourseList[index],
+                    category: Category.clasificacion[index],
                     animation: animation,
                     animationController: animationController,
                   );
@@ -158,28 +157,19 @@ class CategoryView extends StatelessWidget {
   }
 
   void moveTo(context) {
-    if (category.title == "Información") {
+    if (category.title == "Orgánicos") {
       Navigator.push<dynamic>(
         context,
         MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) =>
-              vista1.InformationCourseHomeScreen(),
+          builder: (BuildContext context) => vista1.OrganicGridScreen(),
         ),
       );
     }
-    if (category.title == "Clasificación") {
+    if (category.title == "Inorgánicos") {
       Navigator.push<dynamic>(
         context,
         MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) => vista2.ClasificationHomeScreen(),
-        ),
-      );
-    }
-    if (category.title == "Directorio") {
-      Navigator.push<dynamic>(
-        context,
-        MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) => vista3.DirectoryCourseHomeScreen(),
+          builder: (BuildContext context) => vista2.InorganicGridScreen(),
         ),
       );
     }

@@ -6,15 +6,15 @@ import 'informacion.dart' as vista1;
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
-class PopularCourseListView extends StatefulWidget {
-  const PopularCourseListView({Key key, this.callBack}) : super(key: key);
+class InorganicListView extends StatefulWidget {
+  const InorganicListView({Key key, this.callBack}) : super(key: key);
 
   final Function callBack;
   @override
-  _PopularCourseListViewState createState() => _PopularCourseListViewState();
+  _InorganicListViewState createState() => _InorganicListViewState();
 }
 
-class _PopularCourseListViewState extends State<PopularCourseListView>
+class _InorganicListViewState extends State<InorganicListView>
     with TickerProviderStateMixin {
   AnimationController animationController;
   @override
@@ -44,9 +44,9 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: List<Widget>.generate(
-                Category.popularCourseList.length,
+                Category.inorganicos.length,
                 (int index) {
-                  final int count = Category.popularCourseList.length;
+                  final int count = Category.inorganicos.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
                     CurvedAnimation(
@@ -60,14 +60,14 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
                     callback: () {
                       widget.callBack();
                     },
-                    category: Category.popularCourseList[index],
+                    category: Category.inorganicos[index],
                     animation: animation,
                     animationController: animationController,
                   );
                 },
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1,
+                crossAxisCount: 3,
                 mainAxisSpacing: 32.0,
                 crossAxisSpacing: 32.0,
                 childAspectRatio: 3.3 / 2, //Cambiar

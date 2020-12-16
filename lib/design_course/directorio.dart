@@ -1,13 +1,14 @@
-import 'package:best_flutter_ui_templates/design_course/popular_course_list_view.dart';
+import 'directorio_list.dart' as list;
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+class DirectoryCourseHomeScreen extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _DirectoryCourseHomeScreenState createState() =>
+      _DirectoryCourseHomeScreenState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _DirectoryCourseHomeScreenState extends State<DirectoryCourseHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +39,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Contenido',
+            'Directorio de centros de acopio',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -48,7 +49,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             ),
           ),
           Flexible(
-            child: PopularCourseListView(),
+            child: list.DirectoryList(),
           )
         ],
       ),
@@ -69,7 +70,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Clasificación de residuos domiciliaros',
+                  'Selecciona el tipo de residuo que quieres deshechar',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
